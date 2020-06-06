@@ -5,8 +5,12 @@
  */
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,7 +38,9 @@ public class Doctor extends User {
      
     
     ArrayList<AvailableAppointment> aA = new ArrayList<>();
-    public void addAvailableAppointment(Date date, String time){
+    public void addAvailableAppointment(String date, String time){
+        
+        
         aA.add(new AvailableAppointment(date, time));
     }
     
@@ -62,9 +68,14 @@ public class Doctor extends User {
         private int id;
         private Date date;
         private String time;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
-        public AvailableAppointment(Date date, String time) {
-            this.date = date;
+        public AvailableAppointment(String date, String time) {
+            try {
+                this.date = format.parse(time);
+            } catch (ParseException ex) {
+                Logger.getLogger(Doctor.class.getName()).log(Level.SEVERE, null, ex);
+            }
             this.time = time;
         }
 
@@ -80,6 +91,11 @@ public class Doctor extends User {
             return date;
         }
 
+        public String getDate(String date) {
+            return format.format(date);
+        
+        }
+        
         public void setDate(Date date) {
             this.date = date;
         }

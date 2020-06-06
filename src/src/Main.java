@@ -23,9 +23,9 @@ public class Main {
                 
         //showMenu();
         Doctor myDoctor = new Doctor("Anahi Salgado", "pediatria");
-        myDoctor.addAvailableAppointment(new Date(), "10 a.m");
-        myDoctor.addAvailableAppointment(new Date(), "1 p.m");
-        myDoctor.addAvailableAppointment(new Date(), "4 p.m");
+        myDoctor.addAvailableAppointment("02/02/2018", "10 a.m");
+        myDoctor.addAvailableAppointment("30/09/2020", "1 p.m");
+        myDoctor.addAvailableAppointment("12/05/2014", "4 p.m");
         
         
         Patient p1= new Patient("Esther", "rosa@mail.com");
