@@ -9,6 +9,7 @@ import model.Patient;
 import model.Doctor;
 import java.util.Date;
 import java.util.Scanner;
+import model.User;
 import ui.UIMenu;
 import static ui.UIMenu.*;
 
@@ -28,9 +29,13 @@ public class Main {
         
         
         Patient p1= new Patient("Esther", "rosa@mail.com");
-        System.out.println(myDoctor);
+       // System.out.println(myDoctor);
         
-        
+        User user1 = new Doctor("Pedrito Pereira", "pello@junior.com");
+        user1.showDataUser();
+        System.out.println("-------------");
+        User u2 = new Patient("Evaluna", "eva@gmail.com");
+        u2.showDataUser();
     }
     
    

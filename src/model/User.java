@@ -9,7 +9,7 @@ package model;
  *
  * @author mdari
  */
-public class User {
+public abstract class User {
      private int id;
      private String name;
      private String email;
@@ -67,6 +67,7 @@ public class User {
                 "\nAddress"+address+". Phone: "+phoneNumber;
     }
      
-     
+    public abstract void showDataUser();
+    
      
 }
