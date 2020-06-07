@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import model.Doctor;
 import model.Patient;
+import static ui.UIDoctorMenu.showDoctorMenu;
 
 /**
  *
@@ -110,7 +111,7 @@ public class UIMenu {
                         emailCorrect=true;
                         //Obtener el usuario loggeado
                         doctorLoggeed = doc;
-                        //showDoctorMenu();
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
             }

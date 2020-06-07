@@ -24,7 +24,7 @@ public class Doctor extends User {
     public Doctor(String name, String email) {
 
         super(name, email);
-        this.speciality = speciality;
+       
     }
 
     public String getSpeciality() {
@@ -72,9 +72,9 @@ public class Doctor extends User {
 
         public AvailableAppointment(String date, String time) {
             try {
-                this.date = format.parse(time);
+                this.date = format.parse(date);
             } catch (ParseException ex) {
-                Logger.getLogger(Doctor.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
             }
             this.time = time;
         }
